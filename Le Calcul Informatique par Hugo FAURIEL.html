@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Le Calcul Informatique par Hugo FAURIEL</title>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="style.css"/>
+	</head>
+	<body>
+		<h1>Le Calcul Informatique</h1>
+		<!--Introduction-->
+		<p class="intro1">Le calcul informatique inclu le binaire, le décimal et le hexadécimal.</p>
+		<p class="intro2">Nous allons voir comment convertir le binaire en décimal, décimal en binaire, binaire en hexadécimal, décimal en hexadécimal, hexadécimal en binaire et hexadécimal en décimal.</p>
+			<!--Sommaire-->
+			<p class="sommaire">Sommaire</p>
+			<ol>
+				<li><a href="#binaire">Binaire</a></li>
+					<ul>
+						<li><a href="#bide">Binaire - Décimal</a></li>
+						<li><a href="#bihe">Binaire - Hexadécimal</a></li>
+					</ul>
+				<br/> 
+				<li><a href="#decimal">Décimal</a></li>
+					<ul>
+						<li><a href="#debi">Décimal - Binaire</a></li>
+						<li><a href="#dehe">Décimal - Hexadécimal</a></li>
+					</ul>
+				<br/> 
+				<li><a href="#hexadecimal">Hexadécimal</a></li>
+					<ul>
+						<li><a href="#hebi">Hexadécimal - Binaire</a></li>
+						<li><a href="#hede">Hexadécimal - Décimal</a></li>
+					</ul>
+			</ol>
+			<br/>
+			<br/>
+		<!--1er chapitre Binaire-->
+		<h2 id="binaire">1. Binaire</h2>
+		<p class="introbi1">Le binaire est une succession de 0 et de 1 regroupé généralement en groupe de 4 appelé "Bit".<br/>Le binaire à donc une base de 2 chiffres, le 0 et le 1.</p>
+		<p class="introbi21">Si on veut compter en binaire, ça se passe comme ça :</p>
+		<p class="introbi2">0000<br/>0001<br/>0010<br/>0011<br/>0100<br/>0101<br/>0110<br/>0111<br/>1000<br/>1001<br/>1010<br/>1011<br/>1100<br/>1101<br/>1110<br/>1111</p>
+		<p class="introbi2">(En binaire, 1 + 1 = 0 et 1 + 0 (ou 0 + 1) = 1)</p>
+		<br/>
+		<!--Binaire - Décimal-->
+		<h3 id="bide">1.1. Binaire - Décimal</h3>
+		<p class="para1">Pour convertir du binaire en décimal, prenons l'exemple suivant : 1001 1100<br/>On le note (1001 1100)<span class="ptnb">2</span> pour préciser qu'on est en base binaire.</p>
+		<p class="para1">Pour claculer du binaire en décimal, on doit impérativement calculer de droite à gauche et non de gauche à droite.<br/>Donc pour calculer "1001 1100", il faut le lire comme ça : 0011 1001. De droite à gauche.</p>
+		<p class="para1">Le calcul se fait avec des puissances de 2, soit 2^n (n étant un nombre quelquonque).</p>
+		<p class="para1">1001 1100 = 0x2^0 + 0x2^1 + 1x2^2 + 1x2^3 + 1x2^4 + 0x2^5 + 0x2^6 + 1x2^7
+		<p class="para1">0x2^0 qui fait référence au premier 0 en partant de la droite ;<br/>0x2^1 qui fait référence au deuxième 0 en partant de la droite ;<br/>1x2^2 qui fait référence au troisième 1 en partant de la droite ;<br/>1x2^3 qui fait référence au quatrième 1 en partant de la droite ;<br/>1x2^4 qui fait référence au cinquième 1 en partant de la droite ;<br/>0x2^5 qui fait référence au sixième 0 en partant de le droite ;<br/>0x2^6 qui fait référence au septième 0 en partant de la droite ;<br/>1x2^7 qui fait référence au huitième 1 en partant de la droite.</p>
+		<p class="important1">Important à savoir :</p>
+		<p class="important">2^0 = 1 (et non 0)<br/>2^1 = 2<br/>2^2 = 4<br/>2^3 = 8<br/>2^4 = 16<br/>2^5 = 32<br/>2^6 = 64<br/>2^7 = 128<br/>2^8 = 256<br/>etc...</p>
+		<p class="para1">En reprenant l'exemple ci-dessus,<br/>0x2^0 = 0<br/>0x2^1 = 0<br/>1x2^2 = 4<br/>1x2^3 = 8<br/>1x2^4 = 16<br/>0x2^5 = 0<br/>0x2^6 = 0<br/>1x2^7 = 128</p>
+		<p class="para1">Donc pour finir, on fait 4 + 8 + 16 + 128 = 156</p>
+		<p class="result1">Donc 1001 1100 = 156.</p>
+		<br/>
+			<!--Formulaire Exercice-->
+			<form method="post" action="traitement.php">
+				<p>
+					<fieldset>
+					<legend>Exercices</legend>
+					<label for="réponse">
+					  Convertir 1110 0001 en décimal :
+					</label>
+					<input class="exercice" type="text" name="réponse" id="réponse" placeholder="Entrez votre réponse"/><br/><br/>
+					<script>
+						if ("exercice" == 225){
+							alert("Juste");
+						}else{
+							alert("C'est faux");
+						}
+					</script>
+					<label for="réponse2">
+					  Convertir 0010 0111 en décimal :
+					</label>
+					<input type="text" name="réponse" id="réponse2" placeholder="Entrez votre réponse"/>
+					</fieldset>
+				</p>
+			</form>
+		<br/>
+		<!--Binaire - Hexadécimal-->
+		<h3 id="bihe" class="bihe">1.2. Binaire - Hexadécimal</h3>
+		<p class="lien1">(Si vous voulez savoir ce que c'est que l'Hexadécimal, je vous invite à <a href="#hexadecimal">cliquer ici</a>)</p>
+		<br/>
+		<p class="para2">Pour convertir du binaire en hexadécimal, reprenons l'exemple d'avant : 1001 1100</p>
+		<p class="para2">Pour calculer "1001 1100", on le calcul par groupe de 4.</p>
+		<!--Tableau Binaire - Hexadécimal-->
+		<table>
+			<tr>
+				<th>Binaire</th>
+				<th>Hexadécimal</th>
+			</tr>
+			<tr>
+				<td>0000</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>0001</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>0010</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>0011</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>0100</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>0101</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>0110</td>
+				<td>6
+			</tr>
+			<tr>
+				<td>0111</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>1000</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>1001</td>
+				<td>9</td>
+			</tr>
+			<tr>
+				<td>1010</td>
+				<td>A</td>
+			</tr>
+			<tr>
+				<td>1011</td>
+				<td>B</td>
+			</tr>
+			<tr>
+				<td>1100</td>
+				<td>C</td>
+			</tr>
+			<tr>
+				<td>1101</td>
+				<td>D</td>
+			</tr>
+			<tr>
+				<td>1110</td>
+				<td>E</td>
+			</tr>
+			<tr>
+				<td>1111</td>
+				<td>F</td>
+			</tr>
+		</table>
+		<p class="para2">Si on regarde bien, 1001 correspond à 9 et 1100 correspond à C.</p>
+		<p class="result1">Donc 1001 1100 = 9C.</p>
+		<br/>
+		<br/>
+		<!--2ème chapitre Décimal-->
+		<h2 id="decimal">2. Décimal</h2>
+		<p class="introde1">Le décimal, c'est ce qu'on utilise tout les jours pour compter.<br/>Il est en base de 10 chiffres, le 0, le 1, le 2, le 3, le 4, le 5, le 6, le 7, le 8 et le 9.</p>
+		<p class="introde21">Si on veut compter en décimal, ça se passe comme ça :</p>
+		<p class="introde2">0<br/>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>etc...</p>
+		<br/>
+		<!--Décimal - Binaire-->
+		<h3 id="debi">2.1. Décimal - Binaire</h3>
+		<p class="lien2">(Si vous voulez savoir ce que c'est que le binaire, je vous invite à <a href="#binaire">cliquer ici</a>)</p>
+		<br/>
+		<p class="para3">Pour convertir du décimal en binaire, prenons l'exemple suivant : 156<br/>On le note (156)<span class="ptnb">10</span> pour préciser qu'on est en base décimal.</p>
+		<p class="para3">Le calcul se fait par des divisions euclidienne par 2.</p>
+		<p class="para3">(Nous noteront "Q" pour Quotient, "R" pour Reste et "|-" pour la division euclidienne.)</p>
+		<p class="para3">156 |- 2<br/>Q = 78 ; R = 0</p>
+		<p class="para3">78 |- 2<br/>Q = 39 ; R = 0</p>
+		<p class="para3">39 |- 2<br/>Q = 19 ; R = 1</p>
+		<p class="para3">19 |- 2<br/>Q = 9 ; R = 1</p>
+		<p class="para3">9 |- 2<br/>Q = 4 ; R = 1</p>
+		<p class="para3">4 |- 2<br/>Q = 2 ; R = 0</p>
+		<p class="para3">2 |- 2<br/>Q = 1 ; R = 0</p>
+		<p class="para3">1 |- 2<br/>Q = 0 ; R = 1</p>
+		<p class="para3">Comme vous l'avez vu ci-dessus, on a tout le temps divisé le quotient par 2 pour au final avoir un quotient de 0.</p>
+		<p class="para3">Maintenant on s'interresse au reste et attention à l'ordre de lecture. On lit de bas en haut et non de haut en bas.<br/>En laucurance ici on lit "1001 1100" et non "0011 1001".</p>
+		<p class="result1">Donc 156 = 1001 1100</p>
+		<br/>
+		<!--Décimal - Hexadécimal-->
+		<h3 id="dehe" class="dehe">2.2. Décimal - Hexadécimal</h3>
+		<p class="lien1">(Si vous voulez savoir ce que c'est que l'Hexadécimal, je vous invite à <a href="#hexadecimal">cliquer ici</a>)</p>
+		<br/>
+		<p class="para4">Pour convertir du décimal en hexadécimal, reprenons l'exemple d'avant : 156</p>
+		<p class="para4">Le calcul se fait par des divisions euclidienne, cette fois-ci, par 16.</p>
+		<p class="para4">(Nous noteront "Q" pour Quotient, "R" pour Reste et "|-" pour la division euclidienne)</p>
+		<img src="videotogif_2017.09.24_14.45.45.gif" alt="Hexadécimal" title="Division euclidienne par 16 de l'hexadécimal"/>
+		<p class="para4">156 |- 16<br/>Q = 9 ; R = 12</p>
+		<p class="para4">9 |- 19<br/>Q = 0 ; R = 9</p>
+		<p class="para4">Comme vous l'avez vu ci-dessus, on a tout le temps divisé le quotient par 16 pour au final avoir un quotient de 0.</p>
+		<p class="para4">Maintenant on s'interresse au reste et attention à l'ordre de lecture. On lit de bas en haut et non de haut en bas.<br/>En laucurance ici on lit "9C" (12 qui est égal à C) et non "C9".</p>
+		<p class="result">Donc 156 = 9C</p>
+		<br/>
+		<br/>
+		<!--3ème chapitre Hexadécimal-->
+		<h2 id="hexadecimal">3. Hexadécimal</h2>
+		<p class="introhe1">L'Hexadécimal est un langage qu'on à inventé pour simplifier la lecture du langage binaire.<br/>Il est en base de 16 (10 chiffres et 6 lettres).</p>
+		<p class="introhe21">Si on veut compter en hexadécimal, ça se passe comme ça :</p>
+		<p class="introhe2">0<br/>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>A<br/>B<br/>C<br/>D<br/>E<br/>F<br/>10<br/>11<br/>.<br/>.<br/>.<br/>1F<br/>20<br/>21<br/>.<br/>.<br/>.<br/>FF<br/>etc...</p>
+		<br/>
+		<!--Hexadécimal - Binaire-->
+		<h3 id="hebi" class="hebi">3.1. Hexadécimal - Binaire</h3>
+		<p class="lien2">(Si vous voulez savoir ce que c'est que le binaire, je vous invite à <a href="#binaire">cliquer ici</a>)</p>
+		<br/>
+		<p class="para5">Pour convertir de l'hexadécimal en binaire, prenons l'exemple suisvant : 9C<br/>On le note (9C)<span class="ptnb">16</span> pour préciser qu'on est en base hexadécimal.</p>
+		<p class="para5">Pour calculer "9C", on le calcul comme ça :</p>
+		<!--Tableau Hexadécimal - Binaire-->
+		<table>
+			<tr>
+				<th>Hexadécimal</th>
+				<th>Binaire</th>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>0000</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>0001</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>0010</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>0011</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>0100</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>0101</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>0110</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>0111</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>1000</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>1001</td>
+			</tr>
+			<tr>
+				<td>A</td>
+				<td>1010</td>
+			</tr>
+			<tr>
+				<td>B</td>
+				<td>1011</td>
+			</tr>
+			<tr>
+				<td>C</td>
+				<td>1100</td>
+			</tr>
+			<tr>
+				<td>D</td>
+				<td>1101</td>
+			</tr>
+			<tr>
+				<td>E</td>
+				<td>1110</td>
+			</tr>
+			<tr>
+				<td>F</td>
+				<td>1111</td>
+			</tr>
+		</table>
+		<p class="para5">Comme on le voit ci-dessus, le 9 correspond à 1001 et le C correspond à 1100.</p>
+		<p class="result">Donc 9C = 1001 1100</p>
+		<br/>
+		<!--Hexadécimal - Décimal-->
+		<h3 id="hede" class="hede">3.2. Hexadécimal - Décimal</h3>
+		<p class="lien2">(Si vous voulez savoir ce que c'est que le décimal, je vous invite à <a href="#decimal">cliquer ici</a>)</p>
+		<br/>
+		<table>
+			<tr>
+				<th>Hexadécimal</th>
+				<th>Décimal</th>
+			</tr>
+			<tr>
+				<td>0</td>
+				<td>0</td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>2</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>3</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>4</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>5</td>
+			</tr>
+			<tr>
+				<td>6</td>
+				<td>6</td>
+			</tr>
+			<tr>
+				<td>7</td>
+				<td>7</td>
+			</tr>
+			<tr>
+				<td>8</td>
+				<td>8</td>
+			</tr>
+			<tr>
+				<td>9</td>
+				<td>9</td>
+			</tr>
+			<tr>
+				<td>A</td>
+				<td>10</td>
+			</tr>
+			<tr>
+				<td>B</td>
+				<td>11</td>
+			</tr>
+			<tr>
+				<td>C</td>
+				<td>12</td>
+			</tr>
+			<tr>
+				<td>D</td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<td>E</td>
+				<td>14</td>
+			</tr>
+			<tr>
+				<td>F</td>
+				<td>15</td>
+			</tr>
+		</table>
+		<p class="para6">Pour convertir de l'hexadécimal en décimal, reprenons l'exemple d'avant : 9C</p>
+		<p class="para6">Le calcul se fait par des puissances de 16, soit 16^n (n étant un nombre quelconque).<br/>Comme pour le binaire, le calcul se fait de droite à gauche et non de gauche à droite.</p>
+		<p class="para6">9C = 12x16^0 + 9x16^1<br/>(soit C qui est égal à 12)</p>
+		<p class="para6">9C = 12 + 144</p>
+		<p class="result">Donc 9C = 156</p>
+	</body>
+</html>
