@@ -1,4 +1,6 @@
 # LeCalculInformatique
+*Vous pouvez accéder au site en cliquant sur [ce lien](https://gentlhug.github.io/LeCalculInformatique/).*
+
 Mon tout premier projet lorsque j'ai commencé à m'intéresser à la programmation web. Il s'appelle "LeCalculInformatique". (je vous préviens, c'est moche)
 
 ### :computer: Le début du site
